@@ -12,5 +12,8 @@
 </head>
 <body>
    <?php include('header.php') ?>
+   <main>
+      <section id="bestiary"></section>
+   </main>
 </body>
 </html>

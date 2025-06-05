@@ -15,7 +15,6 @@ if (!empty($_POST['name']) && !empty($_POST['firstname']) && !empty($_POST['word
     echo $nom .' '.$prenom.' '.$password.'   '.$cryptedPassword;
     header('location:connexion.php');
 }
-var_dump($_SESSION['user'])
 ?>
 <!DOCTYPE html>
 <html lang="en">

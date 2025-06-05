@@ -1,8 +1,7 @@
 <?php include('config/environement.php') ?>
+<?php include('config/global.php')?>
 <?php 
-if (isset($_SESSION)) {
-    var_dump($_SESSION['user']);
-}
+
 $connectUser = $_SESSION['user'];
 $_SESSION['user'] = [
     'id' => $connectUser['id'],
@@ -24,7 +23,7 @@ $_SESSION['user'] = [
         </div>
             <nav>
                 <ul class="navbar">
-                    <li class="menu-item-cont"><a href="" class="menu-item">Accueil</a></li>
+                    <li class="menu-item-cont"><a href="index.php" class="menu-item">Accueil</a></li>
                     <li class="menu-item-cont"><a href="" class="menu-item">Bestiaire</a></li>
                     <li class="menu-item-cont"><a href="" class="menu-item">Codex</a></li>
                     <li class="menu-item-cont"><a href="Disconect.php" class="menu-item">Se déconnecter</a></li>

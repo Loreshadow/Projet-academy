@@ -23,8 +23,6 @@ if (!empty($_POST['name']) && !empty($_POST['password'])) {
     } else {
         echo 'Erreur lors de la connexion : utilisateur ou mot de passe incorrect';
     }
-} else {
-    echo 'Erreur lors de l\'initialisation : veuillez remplir tous les champs';
 }
 ?>
 
