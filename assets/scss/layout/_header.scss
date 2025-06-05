@@ -1,0 +1,45 @@
+@use "../base/base";
+@use "../abstract/variables" as v;
+
+header {
+    background-color: v.$secondary-color;
+}
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 15vh;
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1, h2{
+            padding: 0.5%;
+            width: 100%;
+            text-align: center;
+            display: inline-block;
+        }
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+    }
+    .header-logo-container {
+        width: 10%;
+        height: 100%;
+        margin-left: 5%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}
+.navbar {
+    display: flex;
+    gap: 20px;
+    margin-left: -10%;
+}

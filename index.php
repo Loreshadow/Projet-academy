@@ -1,3 +1,7 @@
+<?php include('config/environement.php') ?>
+<?php 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +11,6 @@
    <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-   <script src="script.js"></script>
+   <?php include('header.php') ?>
 </body>
 </html>
