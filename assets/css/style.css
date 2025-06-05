@@ -22,6 +22,7 @@ body {
 
 h1 {
   font-family: "Fell";
+  color: #E6C372;
   font-size: 3rem;
   margin: 0;
   padding: 0;
@@ -29,6 +30,7 @@ h1 {
 
 h2, h3, h4 {
   font-family: "Cinzel";
+  color: #E6C372;
   margin: 0;
   padding: 0;
 }
@@ -45,6 +47,14 @@ ul, li {
   list-style: none;
 }
 
+p {
+  font-family: "Garamond";
+  color: #F5F2EB;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
 a {
   text-decoration: none;
   font-family: "Raleway";
@@ -52,7 +62,7 @@ a {
 }
 
 header {
-  background-color: #D7D9DB;
+  background-color: rgba(179, 179, 180, 0.7529411765);
 }
 
 .header-container {
@@ -97,7 +107,7 @@ header {
 }
 
 .inscription-head {
-  background-color: #D7D9DB;
+  background-color: rgba(179, 179, 180, 0.7529411765);
 }
 
 .heading-container {
@@ -191,7 +201,7 @@ input {
 }
 
 .inscription-head {
-  background-color: #D7D9DB;
+  background-color: rgba(179, 179, 180, 0.7529411765);
 }
 
 .heading-container {
@@ -282,6 +292,77 @@ input {
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 1px 2px 7px 2px rgba(0, 0, 0, 0.205);
+}
+
+#bestiary {
+  margin: 0 auto;
+  background-color: #3D735E;
+  width: 85%;
+  border-radius: 0px 200px 0px 200px;
+  text-align: center;
+  padding: 1.5% 1% 1% 1%;
+  margin-top: 4.5%;
+}
+#bestiary .bestiary-container h2 {
+  margin-bottom: 1%;
+}
+#bestiary .bestiary-container .cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 70px;
+}
+#bestiary .bestiary-container .cards-container .cards {
+  width: 25%;
+  height: 550px;
+  background-color: #F5F2EB;
+  border-radius: 0px 0px 125px 0px;
+  border: 1.5px solid #E6C372;
+  box-shadow: -2px 4px 8px rgba(0, 0, 0, 0.255);
+  transition: transform 0.3s ease;
+}
+#bestiary .bestiary-container .cards-container .cards:hover {
+  transform: scale(1.05);
+}
+#bestiary .bestiary-container .cards-container .cards .card-header {
+  background-color: rgba(179, 179, 180, 0.7529411765);
+  padding: 10px;
+}
+#bestiary .bestiary-container .cards-container .cards .card-header h3 {
+  margin: 0;
+  color: #6C4AB6;
+}
+#bestiary .bestiary-container .cards-container .cards .card-body {
+  padding: 20px;
+}
+#bestiary .bestiary-container .cards-container .cards .card-body p {
+  color: black;
+}
+#bestiary .bestiary-container .cards-container .cards .card-body a {
+  color: #6C4AB6;
+}
+#bestiary .bestiary-container .cards-container .cards .card-body a:hover {
+  text-decoration: underline;
+}
+#bestiary .bestiary-container .cards-container .cards:nth-of-type(2) {
+  border-radius: 0px 0px 125px 125px;
+}
+#bestiary .bestiary-container .cards-container .cards:nth-of-type(3) {
+  border-radius: 0px 0px 0px 125px;
+}
+#bestiary .bestiary-container .cta {
+  margin-top: 3.5%;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #6C4AB6;
+  color: #F5F2EB;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+#bestiary .bestiary-container .cta:hover {
+  background-color: #7957c3;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -9,6 +9,7 @@ body{
 
 h1 {
     font-family: var.$police-principale;
+    color: var.$title;
     font-size: 3rem;
     margin: 0;
     padding: 0;
@@ -16,6 +17,7 @@ h1 {
 
 h2,h3,h4 {
     font-family: var.$police-secondaire;
+    color: var.$title;
     margin: 0;
     padding: 0;
 }
@@ -28,6 +30,13 @@ h3 {
 
 ul, li {
     list-style: none;
+}
+p {
+    font-family: var.$police-tertiare;
+    color: var.$font;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
 }
 
 a {

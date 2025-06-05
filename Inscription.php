@@ -7,13 +7,13 @@ if (!empty($_POST['name']) && !empty($_POST['firstname']) && !empty($_POST['word
     $cryptedPassword = password_hash($password,PASSWORD_ARGON2I);
     $spell = htmlspecialchars($_POST['spell']);
     $email = htmlspecialchars($_POST['email']);
+    $role_id = 1;
 
-    $requestCreate = $bdd->prepare('INSERT INTO user(username,firstname,email,wordpass,spell)
-                                                VALUES(?,?,?,?,?)');
-    $dataCreate = $requestCreate->execute(array($nom,$prenom,$email,$cryptedPassword,$spell));
+    $requestCreate = $bdd->prepare('INSERT INTO user(username,firstname,email,wordpass,spell,role_id)
+                                                VALUES(?,?,?,?,?,?)');
+    $dataCreate = $requestCreate->execute(array($nom,$prenom,$email,$cryptedPassword,$spell,$role_id));
 
-    echo $nom .' '.$prenom.' '.$password.'   '.$cryptedPassword;
-    header('location:connexion.php');
+    header('location:Connection.php');
 }
 ?>
 <!DOCTYPE html>
@@ -62,7 +62,7 @@ if (!empty($_POST['name']) && !empty($_POST['firstname']) && !empty($_POST['word
 
                     <div class="form-item">
                         <label for="wordpass">Votre mot de passe:</label>
-                        <input type="mot de passe" name="wordpass" placeholder="entrez votre prénom ici" required>
+                        <input type="password" name="wordpass" placeholder="entrez votre mot de passe ici" required>
                     </div>
 
                     <div class="form-item">

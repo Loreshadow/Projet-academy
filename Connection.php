@@ -16,7 +16,8 @@ if (!empty($_POST['name']) && !empty($_POST['password'])) {
         $_SESSION['user'] = [
             'id' => $user['id'],
             'nom' => $user['username'],
-            'prenom' => $user['firstname']
+            'prenom' => $user['firstname'],
+            'role_id' => $user['role_id']
         ];
         header('Location:index.php');
         exit();
@@ -62,7 +63,7 @@ if (!empty($_POST['name']) && !empty($_POST['password'])) {
 
                     <div class="form-item">
                         <label for="password">Votre mot de passe:</label>
-                        <input type="password" name="password" placeholder="entrez votre prénom ici">
+                        <input type="password" name="password" placeholder="entrez votre mot de passe ici">
                     </div>
                     <div class="form-submit">
                         <button class="submit--primary">Se Connecter</button>

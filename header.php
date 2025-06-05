@@ -6,7 +6,8 @@ $connectUser = $_SESSION['user'];
 $_SESSION['user'] = [
     'id' => $connectUser['id'],
     'nom' => $connectUser['nom'],
-    'prenom' => $connectUser['prenom']
+    'prenom' => $connectUser['prenom'],
+    'role_id' => $connectUser['role_id']
 ];
 ?>
 <?php 
@@ -19,7 +20,7 @@ $_SESSION['user'] = [
         </div>
         <div class="header">
             <h1>L'Académie "À Peu Près".</h1>
-            <p>Bienvenue, <?php echo $connectUser['nom'] ?></p>
+            <p>Bienvenue, <?php echo $connectUser['nom'] ?> !</p>
         </div>
             <nav>
                 <ul class="navbar">
