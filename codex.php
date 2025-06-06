@@ -9,7 +9,6 @@
                                          FROM user');
     $requestUser->execute();
     $userData = $requestUser->fetchAll();
-    var_dump($userData);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,12 +16,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Codex</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <?php include('header.php');?>
     <div class="codex-container">
         <div>
-
             <ul class="codex-heading">
                 <li><a href="codex.php" class="type-items">Tous</a></li>
                 <li><a href="codex.php?spell=light" class="type-items">Lumière</a></li>
@@ -32,7 +31,7 @@
                 <li><a href="newCodex.php" class="type-items">Ajouter un sort</a></li>
             </ul>
         </div>
-        <div class="bestiaire-container-content">
+        <div class="codex-container-content">
         <?php
             $filteredData = $data;
             if (isset($_GET['spell']) && !empty($_GET['spell'])) {
@@ -45,9 +44,9 @@
                 echo "<p>Aucun résultat trouvé.</p>";
             } else {
                 foreach ($filteredData as $row) {?>
-        <div class='bestiaire-content'>
+        <div class='codex-content'>
             <h3><?= $row['spell_name']?> </h3>
-            <p><?= $row['element'] ?></p>
+            <p><strong>Type : </strong><?= $row['element'] ?></p>
             <p><strong>Auteur:</strong> <?php 
             if (isset($userData)){ 
                 foreach ($userData as $user) {

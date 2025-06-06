@@ -2,14 +2,10 @@
 <?php 
 if (isset($_SESSION['user'])) {
     $user_id = ($_SESSION['user']['id']);
-    var_dump($user_id);
     if (!empty($_POST['best_name']) && !empty($_POST['descriptions']) && !empty($_POST['types'])) {
         $best_name = htmlspecialchars($_POST['best_name']);
         $descriptions = htmlspecialchars($_POST['descriptions']);
         $types = htmlspecialchars($_POST['types']);
-        
-
-        var_dump($best_name, $descriptions, $user_id, $types);
 
         $requestCreate = $bdd->prepare('INSERT INTO bestiary (best_name,descriptions,author,types)
                                                 VALUES (?,?,?,?)');
@@ -17,8 +13,6 @@ if (isset($_SESSION['user'])) {
 
         echo '<p>Créature ajouté avec succès</p>';
         // header('Location:Bestiaire.php');
-    } else {
-        echo 'Erreur lors de l\'envoi';
     }
 } elseif (!isset($_SESSION['user'])) {
     die('<h1 class="unconnect">Vous devez vous connecter pour accéder à cette page.</h1>'

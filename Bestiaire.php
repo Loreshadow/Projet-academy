@@ -7,7 +7,6 @@ $data = $requestSelect->fetchAll();
 $requestUser = $bdd->prepare('SELECT id,username FROM user');
 $requestUser->execute();
 $userData = $requestUser->fetchAll();
-var_dump($userData);
 ?>
 <!DOCTYPE html>
 <html lang="en">
