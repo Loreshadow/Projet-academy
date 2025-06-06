@@ -7,7 +7,7 @@
 <head>
    <meta charset="UTF-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>Document</title>
+   <title>Académie</title>
    <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -54,7 +54,7 @@
                   </div>  
                </div>
             </div>
-            <a href="" class="cta cta--primary">Consulter le bestiaire</a>
+            <a href="Bestiaire.php" class="cta cta--primary">Consulter le bestiaire</a>
          </div>
       </section>
    </main>

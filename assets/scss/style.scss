@@ -1,13 +1,14 @@
-// Add your abstract styles under this comment
+// abstract styles under this comment
 
-// Add your base tyles under this comment
+// base styles under this comment
 @use "base/typography";
-// Add your component styles under this comment
+// component styles under this comment
 
-// add your layout styles under this comment
+// layout styles under this comment
 @use "layout/header";
 // add your pages styles under this comment
+@use "pages/homepage";
 @use "pages/inscription";
 @use "pages/Connection";
-@use "pages/homepage";
-// add your theme styles under this comment (not neccesary)
+@use "pages/bestiary";
+// theme styles under this comment (not neccesary)

@@ -25,7 +25,7 @@ $_SESSION['user'] = [
             <nav>
                 <ul class="navbar">
                     <li class="menu-item-cont"><a href="index.php" class="menu-item">Accueil</a></li>
-                    <li class="menu-item-cont"><a href="" class="menu-item">Bestiaire</a></li>
+                    <li class="menu-item-cont"><a href="Bestiaire.php" class="menu-item">Bestiaire</a></li>
                     <li class="menu-item-cont"><a href="" class="menu-item">Codex</a></li>
                     <li class="menu-item-cont"><a href="Disconect.php" class="menu-item">Se déconnecter</a></li>
                 </ul>
