@@ -368,8 +368,8 @@ input {
 .bestiaire-heading {
   display: flex;
   gap: 20px;
-  padding: 0.5%;
-  width: 47%;
+  padding: 1.5%;
+  width: 100%;
   border-radius: 25px;
   border: 1px solid #E6C372;
   background-color: rgba(179, 179, 180, 0.7529411765);
@@ -403,9 +403,73 @@ input {
   left: 50%;
 }
 
+.bestiaire-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2%;
+}
+
+.bestiaire-container-content {
+  width: 100%;
+  margin-top: 2%;
+  display: flex;
+}
+
 .bestiaire-content {
-  width: 15%;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
   margin-left: 20px;
+}
+
+.form-container-bestiary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  background-color: #F5F2EB;
+  width: 45%;
+  padding: 1%;
+  padding-top: 1%;
+  margin-top: 5%;
+  border-radius: 35px;
+}
+.form-container-bestiary h2 {
+  margin-bottom: 2%;
+}
+
+.form-bestiary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px 40px;
+}
+
+.form-item-best, .form-submit-best {
+  width: 45%;
+}
+
+.input-best {
+  width: 100%;
+  border: none;
+  border-radius: 15px;
+  padding: 2%;
+}
+
+.submit--best {
+  background-color: #3D735E;
+  border: 1px solid;
+  margin-top: 2.5%;
+  padding: 1.5%;
+  border-radius: 15px;
+  width: 45%;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 2px 7px 2px rgba(0, 0, 0, 0.205);
 }
 
 /*# sourceMappingURL=style.css.map */

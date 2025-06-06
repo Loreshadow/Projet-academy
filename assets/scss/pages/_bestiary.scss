@@ -4,8 +4,8 @@
 .bestiaire-heading {
     display: flex;
     gap: 20px;
-    padding: 0.5%;
-    width: 47%;
+    padding: 1.5%;
+    width: 100%;
     border-radius: 25px;
     border: 1px solid v.$title;
     background-color: v.$secondary-color;
@@ -41,8 +41,22 @@
         left: 50%;
     }
 }
-
+.bestiaire-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2%;
+}
+.bestiaire-container-content {
+    width: 100%;
+    margin-top: 2%;
+    display: flex;
+}
 .bestiaire-content {
-    width: 15%;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
     margin-left: 20px;
 }

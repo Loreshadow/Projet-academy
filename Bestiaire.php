@@ -4,6 +4,10 @@
 $requestSelect = $bdd->prepare('SELECT best_name,descriptions,author,types FROM bestiary');
 $requestSelect->execute();
 $data = $requestSelect->fetchAll();
+$requestUser = $bdd->prepare('SELECT id,username FROM user');
+$requestUser->execute();
+$userData = $requestUser->fetchAll();
+var_dump($userData);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,26 +29,36 @@ $data = $requestSelect->fetchAll();
                     <li><a href="Bestiaire.php?type=demoniaque" class="type-items">Démoniaque</a></li>
                     <li><a href="Bestiaire.php?type=mort-vivant" class="type-items">Mort vivant</a></li>
                     <li><a href="Bestiaire.php?type=mi-bete" class="type-items">Mi-bête</a></li>
-                    <li><a href="" class="type-items">Ajouter une créature</a></li>
+                    <li><a href="newBestiary.php" class="type-items">Ajouter une créature</a></li>
                 </ul>
             </div>
-            <div class="bestiaire-content">
-                <?php
-                $filteredData = $data;
-                if (isset($_GET['type']) && !empty($_GET['type'])) {
-                    $type = htmlspecialchars($_GET['type']);
-                    $filteredData = array_filter($data, function($item) use ($type) {
-                        return $item['types'] === $type;
-                    });
-}
-                if (empty($filteredData)) {
-                    echo "<p>Aucun résultat trouvé.</p>";
-                } else {
-                    foreach ($filteredData as $row) {?>
+                <div class="bestiaire-container-content">
+                    <?php
+                    $filteredData = $data;
+                    if (isset($_GET['type']) && !empty($_GET['type'])) {
+                        $type = htmlspecialchars($_GET['type']);
+                        $filteredData = array_filter($data, function($item) use ($type) {
+                            return $item['types'] === $type;
+                        });
+    }
+                    if (empty($filteredData)) {
+                        echo "<p>Aucun résultat trouvé.</p>";
+                    } else {
+                        foreach ($filteredData as $row) {?>
                 <div class='bestiaire-content'>
                     <h3><?= $row['best_name']?> </h3>
                     <p><?= $row['descriptions'] ?></p>
-                    <p><strong>Auteur:</strong><?= $row['author'] ?> </p>
+                    <p><strong>Auteur:</strong> <?php 
+                    if (isset($userData)){ 
+                        foreach ($userData as $user) {
+                            if ($user['id'] == $row['author']) {
+                                echo htmlspecialchars($user['username']);
+                            }
+                        }
+                    } else {
+                        echo 'Auteur inconnu';
+                    }
+                    ?> </p>
                     <p><strong>Type:</strong><?= $row['types'] ?></p>
                 </div>
                 <?php
