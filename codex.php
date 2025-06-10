@@ -20,51 +20,54 @@
 </head>
 <body>
     <?php include('header.php');?>
-    <div class="codex-container">
-        <div>
-            <ul class="codex-heading">
-                <li><a href="codex.php" class="type-items">Tous</a></li>
-                <li><a href="codex.php?spell=light" class="type-items">Lumière</a></li>
-                <li><a href="codex.php?spell=eau" class="type-items">Eau</a></li>
-                <li><a href="codex.php?spell=air" class="type-items">Air</a></li>
-                <li><a href="codex.php?spell=feu" class="type-items">Feu</a></li>
-                <li><a href="newCodex.php" class="type-items">Ajouter un sort</a></li>
-            </ul>
-        </div>
-        <div class="codex-container-content">
-        <?php
-            $filteredData = $data;
-            if (isset($_GET['spell']) && !empty($_GET['spell'])) {
-                $spell = $_GET['spell'];
-                $filteredData = array_filter($data, function($item) use ($spell) {
-                return $item['element'] === $spell;
-                });
-            }
-            if (empty($filteredData)) {
-                echo "<p>Aucun résultat trouvé.</p>";
-            } else {
-                foreach ($filteredData as $row) {?>
-        <div class='codex-content'>
-            <div class="img-codex-container">
-                <img src="assets/img/<?= $row['img']?>" alt="">
+    <main>
+        <div class="codex-container">
+            <div>
+                <ul class="codex-heading">
+                    <li><a href="codex.php" class="type-items">Tous</a></li>
+                    <li><a href="codex.php?spell=light" class="type-items">Lumière</a></li>
+                    <li><a href="codex.php?spell=eau" class="type-items">Eau</a></li>
+                    <li><a href="codex.php?spell=air" class="type-items">Air</a></li>
+                    <li><a href="codex.php?spell=feu" class="type-items">Feu</a></li>
+                    <li><a href="newCodex.php" class="type-items">Ajouter un sort</a></li>
+                </ul>
             </div>
-            <h3><?= $row['spell_name']?> </h3>
-            <p><strong>Type : </strong><?= $row['element'] ?></p>
-            <p><strong>Auteur:</strong> <?php 
-            if (isset($userData)){ 
-                foreach ($userData as $user) {
-                    if ($user['id'] == $row['author_id']) {
-                        echo $user['username'];
-                    }
+            <div class="codex-container-content">
+            <?php
+                $filteredData = $data;
+                if (isset($_GET['spell']) && !empty($_GET['spell'])) {
+                    $spell = $_GET['spell'];
+                    $filteredData = array_filter($data, function($item) use ($spell) {
+                    return $item['element'] === $spell;
+                    });
                 }
-            } else {
-                echo 'Auteur inconnu';
-            }
-            ?> </p>
+                if (empty($filteredData)) {
+                    echo "<p>Aucun résultat trouvé.</p>";
+                } else {
+                    foreach ($filteredData as $row) {?>
+            <div class='codex-content'>
+                <div class="img-codex-container">
+                    <img src="assets/img/<?= $row['img']?>" alt="">
+                </div>
+                <h3><?= $row['spell_name']?> </h3>
+                <p><strong>Type : </strong><?= $row['element'] ?></p>
+                <p><strong>Auteur:</strong> <?php 
+                if (isset($userData)){ 
+                    foreach ($userData as $user) {
+                        if ($user['id'] == $row['author_id']) {
+                            echo $user['username'];
+                        }
+                    }
+                } else {
+                    echo 'Auteur inconnu';
+                }
+                ?> </p>
+            </div>
+            <?php
+                }
+            } ?>
         </div>
-        <?php
-            }
-        } ?>
-    </div>
+    </main>
+   <?php include('footer.php') ?>
 </body>
 </html>

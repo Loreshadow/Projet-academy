@@ -72,5 +72,6 @@ if (!empty($_POST['name']) && !empty($_POST['password'])) {
             </div>
         </section>
     </main>
+    <?php include('footer.php') ?>
 </body>
 </html>

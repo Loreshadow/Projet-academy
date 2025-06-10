@@ -6,6 +6,7 @@
 
 // layout styles under this comment
 @use "layout/header";
+@use "layout/footer";
 // add your pages styles under this comment
 @use "pages/homepage";
 @use "pages/inscription";
@@ -14,4 +15,5 @@
 @use "pages/newBestiary";
 @use "pages/codex";
 @use "pages/newCodex";
+@use "pages/editBestiary";
 // theme styles under this comment (not neccesary)

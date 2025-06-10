@@ -82,5 +82,6 @@ if (!empty($_POST['name']) && !empty($_POST['firstname']) && !empty($_POST['word
             </div>
         </section>
     </main>
+    <?php include('footer.php') ?>
 </body>
 </html>
