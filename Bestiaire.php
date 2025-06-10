@@ -1,7 +1,7 @@
 <?php include('config/environement.php') ?>
 
 <?php 
-$requestSelect = $bdd->prepare('SELECT best_name,descriptions,author,types FROM bestiary');
+$requestSelect = $bdd->prepare('SELECT best_name,descriptions,author,types,img FROM bestiary');
 $requestSelect->execute();
 $data = $requestSelect->fetchAll();
 $requestUser = $bdd->prepare('SELECT id,username FROM user');
@@ -45,6 +45,9 @@ $userData = $requestUser->fetchAll();
                     } else {
                         foreach ($filteredData as $row) {?>
                 <div class='bestiaire-content'>
+                    <div class="best-img-container">
+                        <img src="assets/img/<?= $row['img']?>" alt="">
+                    </div>
                     <h3><?= $row['best_name']?> </h3>
                     <p><?= $row['descriptions'] ?></p>
                     <p><strong>Auteur:</strong> <?php 

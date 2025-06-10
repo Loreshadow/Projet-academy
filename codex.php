@@ -1,7 +1,7 @@
 <?php include('config/environement.php') ?>
 
 <?php 
-    $requestSelect = $bdd->prepare('SELECT spell_name,element,author_id 
+    $requestSelect = $bdd->prepare('SELECT spell_name,element,author_id,img
                                            FROM spell');
     $requestSelect->execute();
     $data = $requestSelect->fetchAll();
@@ -45,6 +45,9 @@
             } else {
                 foreach ($filteredData as $row) {?>
         <div class='codex-content'>
+            <div class="img-codex-container">
+                <img src="assets/img/<?= $row['img']?>" alt="">
+            </div>
             <h3><?= $row['spell_name']?> </h3>
             <p><strong>Type : </strong><?= $row['element'] ?></p>
             <p><strong>Auteur:</strong> <?php 

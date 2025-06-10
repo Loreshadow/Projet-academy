@@ -55,9 +55,23 @@
     display: flex;
     flex-wrap: wrap;
 }
+.best-img-container {
+    height: 200px;
+    img {
+        border-radius: 25px;
+        width: 100%;
+        height: 100%;      
+        object-fit: cover;
+        object-position: top;
+    }
+}
 .bestiaire-content {
     display: flex;
     flex-direction: column;
     width: 30%;
     margin-left: 20px;
+    border: 1px solid v.$title;
+    border-radius: 25px;
+    padding: 0.5%;
+    margin-bottom: 1.25rem;
 }
